@@ -137,7 +137,7 @@ header{width:var(--bw);display:flex;align-items:center;gap:10px}
 @keyframes orbIn{0%{transform:translate(-50%,-50%) scale(0) rotate(-180deg)}100%{transform:translate(-50%,-50%) scale(1)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 .flyorb{position:fixed;z-index:300;pointer-events:none;border-radius:50%}
-.ghost{position:absolute;width:calc(100% / 15 * .9);aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:28%;border:3px dashed var(--c);background:rgba(255,255,255,.45);display:none;z-index:2;animation:ghost 1s ease-in-out infinite}
+.dest-ghost{position:absolute;width:calc(100% / 15 * .9);aspect-ratio:1/1;transform:translate(-50%,-50%);border-radius:28%;border:3px dashed var(--c);background:rgba(255,255,255,.45);display:none;z-index:2;animation:ghost 1s ease-in-out infinite}
 @keyframes ghost{50%{opacity:.55}}
 
 #banner{position:absolute;left:50%;top:50%;z-index:40;pointer-events:none;font-weight:700;white-space:nowrap;opacity:0;
@@ -431,7 +431,7 @@ function buildTokens(){
     el.addEventListener('click',e=>{e.stopPropagation();onTokenClick(c,ti)});
     el.addEventListener('mouseenter',()=>showGhost(c,ti));el.addEventListener('mouseleave',hideGhost);
     L.appendChild(el);tokenEls[c].push(el);}}
-  const g=document.createElement('div');g.className='ghost';g.id='ghost';L.appendChild(g);
+  const g=document.createElement('div');g.className='dest-ghost';g.id='ghost';L.appendChild(g);
 }
 const panelEls={};
 function buildPanels(){
